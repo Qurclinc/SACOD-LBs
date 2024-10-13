@@ -26,8 +26,19 @@ public:
     bool operator<=(const Integer &obj) const;
 
     Integer operator+(const Integer &obj) const;
+    Integer operator-(const Integer &obj) const;
+    Integer operator*(const Integer &obj) const;
+    Integer operator/(const Integer &obj) const;
+    Integer operator%(const Integer &obj) const;
+    Integer operator^(const Integer &obj) const;
 
+    Integer operator+=(const Integer &obj);
+    Integer operator-=(const Integer &obj);
+    Integer operator*=(const Integer &obj);
+    Integer operator/=(const Integer &obj);
+    Integer operator%=(const Integer &obj);
     void print() const;
 
-
+private:
+    void myCout(std::vector<int> &vec, int d1, int d2, int buf) const;
 };
