@@ -10,7 +10,7 @@ int main() {
         std::cout << "Enter N > 0\nN = ";
         std::cin >> N;
     } while (N <= 0);
-    getNumber(seq, N).print();
+    std::cout << getNumber(seq, N);
     return 0;
 }
 
@@ -23,8 +23,5 @@ Integer getNumber(std::vector<Integer> &seq, int N) {
         seq.push_back(seq[seq.size() - 3] + seq[seq.size() - 2] + seq[seq.size() - 1]);
         counter++;
     }
-    // for (auto i: seq) {
-    //     i.print();
-    // }
     return seq[seq.size() - 1];
 }

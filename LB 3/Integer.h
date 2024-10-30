@@ -7,6 +7,7 @@ typedef unsigned long long ull;
 class Integer {
 private:
     int m_d = 1000;
+protected:
     std::vector<int> m_number;
 
 public:
@@ -30,13 +31,16 @@ public:
     Integer operator*(const Integer &obj) const;
     Integer operator/(const Integer &obj) const;
     Integer operator%(const Integer &obj) const;
-    Integer operator^(const Integer &obj) const;
+    Integer pow(const Integer &obj) const;
 
     Integer operator+=(const Integer &obj);
     Integer operator-=(const Integer &obj);
     Integer operator*=(const Integer &obj);
     Integer operator/=(const Integer &obj);
     Integer operator%=(const Integer &obj);
+
+    friend std::istream& operator>> (std::istream& is, Integer& obj);
+    friend std::ostream& operator<< (std::ostream& is, const Integer& obj);
     void print() const;
 
 private:

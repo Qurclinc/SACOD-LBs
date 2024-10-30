@@ -226,7 +226,7 @@ Integer Integer::operator%=(const Integer &obj) {
     return *this;
 }
 
-Integer Integer::operator^(const Integer &obj) const {
+Integer Integer::pow(const Integer &obj) const {
     // Возведение в степен реализовано с помощью QuickPow - быстрого возведения в степень
     Integer f = 1; // Результат
     Integer c = *this; // Основание
@@ -246,7 +246,8 @@ Integer Integer::operator^(const Integer &obj) const {
     return f;
 }
 
-void Integer::print() const {
+void Integer::print() const
+{
     for (int i = m_number.size() - 1; i >= 0; i--) {
         std::string buf = std::to_string(m_number[i]);
         if (buf.length() != 3 && i != m_number.size() - 1) {
@@ -256,6 +257,26 @@ void Integer::print() const {
 
     }
     std::cout << "\n";
+}
+
+std::istream& operator>> (std::istream& is, Integer& obj) {
+    std::string str;
+    is >> str;
+    obj = Integer(str);
+    return is;
+}
+
+std::ostream& operator<< (std::ostream& os, const Integer& obj) {
+    for (int i = obj.m_number.size() - 1; i >= 0; i--) {
+        std::string buf = std::to_string(obj.m_number[i]);
+        if (buf.length() != 3 && i != obj.m_number.size() - 1) {
+            buf = std::string(3 - buf.length(), '0') + buf;
+        }
+        os << buf;
+
+    }
+    os << "\n";
+    return os;
 }
 
 void Integer::myCout(std::vector<int> &vec, int d1, int d2, int buf) const{
