@@ -3,6 +3,7 @@
 #include <cstdlib>
 
 #include "Sorts.h"
+#include "Testing.h"
 
 std::vector<int> generateArray(int n);
 void print(std::vector<int> &arr);
@@ -13,8 +14,21 @@ int main() {
     std::vector<int> arr = generateArray(N);
     print(arr);
     // ShakerSort(arr);
-    QuickSort(arr, 0, N - 1);
+    // QuickSort(arr, 0, N - 1);
+    // SelectSort(arr);
+    // ShellSort(arr, Shell);
+    // ShellSort(arr, Knutt);
+    // ShellSort(arr, Pratt);
+    // ShellSort(arr, Fibbonacchi);
+    // HairbrushSort(arr);
+    // InsertSort(arr);
     print(arr);
+    if (isSorted(arr)) {
+        std::cout << "\nArray is sorted\n";
+    }
+    else {
+        std::cout << "\nArray is not sorted\n";
+    }
     return 0;
 }
 
