@@ -75,7 +75,7 @@ void doFloat() {
     std::cin >> x;
     std::cout << "Binary representation:\n";
     BinOut((unsigned char*)&x, sizeof(x));
-    std::cout << "Enter binary representation of short:\n";
+    std::cout << "Enter binary representation of float:\n";
     BinIn((unsigned char*)&x, sizeof(x));
     std::cout << "This is its value: " << x << "\n";
 }

@@ -29,10 +29,20 @@ int main()
         arr[i].push_back(i + 1);
         printf("Enter age of %d child: ", i + 1);
         int age;
-        std::cin >> age;
+        do {
+            std::cin >> age;
+        } while (age <= 0);
         arr[i].push_back(age);
     }
-    std::cout << "Kids:\n";
+    std::cout << "Kids:\n";while (num.length() != 0) {
+    if ((num[num.length() - 1] - '0') >= base) {
+      return true;
+    }
+    num = num.substr(0, num.length() - 1);
+  }
+  return false;
+}
+
     for (int i = 0; i < arr.size(); i++) {
         for (int j = 0; j < arr[i].size(); j++) {
             printf("%d\t", arr[i][j]);

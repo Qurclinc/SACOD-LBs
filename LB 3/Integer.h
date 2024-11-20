@@ -31,7 +31,7 @@ public:
     Integer operator*(const Integer &obj) const;
     Integer operator/(const Integer &obj) const;
     Integer operator%(const Integer &obj) const;
-    Integer pow(const Integer &obj) const;
+    Integer operator^(const Integer &obj) const;
 
     Integer operator+=(const Integer &obj);
     Integer operator-=(const Integer &obj);

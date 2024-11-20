@@ -226,7 +226,7 @@ Integer Integer::operator%=(const Integer &obj) {
     return *this;
 }
 
-Integer Integer::pow(const Integer &obj) const {
+Integer Integer::operator^(const Integer &obj) const {
     // Возведение в степен реализовано с помощью QuickPow - быстрого возведения в степень
     Integer f = 1; // Результат
     Integer c = *this; // Основание
@@ -275,7 +275,7 @@ std::ostream& operator<< (std::ostream& os, const Integer& obj) {
         os << buf;
 
     }
-    os << "\n";
+    os << "\0";
     return os;
 }
 
